@@ -72,6 +72,9 @@ func main() {
 
 	result = validPassword(strArr)
 	fmt.Println("total valid password: ", result)
+
+	result = day2part2(strArr)
+	fmt.Println("total valid password part two: ", result)
 }
 
 func part1(arr []int, k int) int {
