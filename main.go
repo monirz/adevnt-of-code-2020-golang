@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func main() {
@@ -43,6 +44,34 @@ func main() {
 	//part two input
 	result = part2(arr, k)
 	fmt.Println("Part two: ", result)
+
+	//day 2 part 01
+
+	//TODO refactor this code
+
+	file, err = os.Open("day_02.in")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	scanner = bufio.NewScanner(file)
+
+	var strArr [][]string
+	for scanner.Scan() {
+
+		s := scanner.Text()
+		splittedStr := strings.Split(s, " ")
+		strArr = append(strArr, splittedStr)
+
+	}
+
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+	result = validPassword(strArr)
+	fmt.Println("total valid password: ", result)
 }
 
 func part1(arr []int, k int) int {
