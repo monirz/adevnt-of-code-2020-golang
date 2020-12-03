@@ -76,16 +76,9 @@ func day2part2(arr [][]string) int {
 			log.Fatal(err)
 		}
 
-		a := string(v[2][firstPos-1]) == char
-		b := string(v[2][secondPos-1]) == char
-
-		if a != b {
+		if string(v[2][firstPos-1]) == char && string(v[2][secondPos-1]) == char {
 			count++
 		}
-
-		// for _, ch := range v[2] {
-
-		// }
 
 	}
 
